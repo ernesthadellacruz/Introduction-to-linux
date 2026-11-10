@@ -15,3 +15,4 @@ mv used to move file from one directory to another (eg mv ucc.txt ~/Downloads/) 
 nano used for editting (nano 1.txt)
 echo used to write txt also (eg echo "love" 1.txt)
 cat used to read file  (eg cat 1.txt)
+             lop
