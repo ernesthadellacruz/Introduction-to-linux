@@ -2,4 +2,16 @@
 first change directory from home to root (comand =cd /)
 
 .....................................LINUX USER..........................
-
+   LINUX COMANDS 
+whoami
+pwd 
+cd used to change directory
+ls used to list files
+mkdir used to create folder 
+rmdir used to delete folder
+touch  used to create file (note every file has extention)
+cp used to copy file from one directory to another (eg cp ucc.txt ~/Downloads/)
+mv used to move file from one directory to another (eg mv ucc.txt ~/Downloads/) or used to rename file (eg cp ucc.txt file.txt)
+nano used for editting (nano 1.txt)
+echo used to write txt also (eg echo "love" 1.txt)
+cat used to read file  (eg cat 1.txt)
