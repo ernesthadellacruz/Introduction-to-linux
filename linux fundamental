@@ -1,0 +1,172 @@
+HACK THE BOX (HTB) – LINUX FUNDAMENTALS PRACTICAL WRITE-UP
+
+SECTION 6: SYSTEM INFORMATION
+
+Question 1
+
+Question: What is the name of the machine hardware?
+
+Command used:
+
+uname -m
+
+Why this command was used:
+
+The "uname" command displays information about the operating system and the machine. The "-m" option displays the machine hardware name or architecture.
+
+Output:
+
+x86_64
+
+Answer: "x86_64"
+
+---
+
+Question 2
+
+Question: What is the path to the htb-student user's home directory?
+
+Command used:
+
+echo $HOME
+
+Why this command was used:
+
+The "echo" command displays the value of a variable. "$HOME" is an environment variable that stores the path to the current user's home directory.
+
+Output:
+
+/home/htb-student
+
+Answer: "/home/htb-student"
+
+---
+
+Question 3
+
+Question: What is the path to the htb-student user's mail?
+
+Command used:
+
+echo $MAIL
+
+Why this command was used:
+
+The "$MAIL" environment variable stores the path to the user's mail file. The command displays the value of that variable.
+
+Output:
+
+/var/mail/htb-student
+
+Answer: "/var/mail/htb-student"
+
+---
+
+Question 4
+
+Question: Which shell is specified for the htb-student user?
+
+Command used:
+
+getent passwd htb-student
+
+Why this command was used:
+
+The "getent passwd" command retrieves user account information from the system's user database. The output contains several fields, including the user's home directory and login shell.
+
+Output:
+
+htb-student:x:1002:1002::/home/htb-student:/bin/bash
+
+Answer: "/bin/bash"
+
+The last field indicates the shell specified for the user.
+
+---
+
+Question 5
+
+Question: Which kernel release is installed on the system? (Format: 1.22.3)
+
+Command used:
+
+uname -r
+
+Why this command was used:
+
+The "uname" command provides system information. The "-r" option displays the kernel release currently installed on the system.
+
+Output:
+
+4.15.0-123-generic
+
+Answer: "4.15.0-123-generic"
+
+---
+
+Question 6
+
+Question: What is the name of the network interface that MTU is set to 1500?
+
+Command used:
+
+ip -o link show
+
+Why this command was used:
+
+The "ip" command is used to display and manage network configuration. The "link show" option displays network interfaces and their properties. The "-o" option displays each interface on one line.
+
+We examined the output and identified the interface with an MTU value of 1500.
+
+Output:
+
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500
+
+Answer: "ens192"
+
+---
+
+SECTION 7: LINUX FILE SYSTEM
+
+Question 1
+
+Question: What is the name of the hidden "history" file in the htb-user's home directory?
+
+Command used:
+
+ls -la /home/htb-student
+
+Why this command was used:
+
+The "ls" command lists files and directories. The "-l" option displays files in long format, while "-a" displays all files, including hidden files.
+
+In Linux, hidden files usually begin with a dot (".").
+
+Relevant output:
+
+.bash_history
+
+Answer: ".bash_history"
+
+---
+
+Question 2
+
+Question: What is the index number of the "sudoers" file in the "/etc" directory?
+
+Command used:
+
+ls -i /etc/sudoers
+
+Why this command was used:
+
+The "ls" command lists files and directories. The "-i" option displays the inode number of a file.
+
+An inode is a data structure used by Linux filesystems to store information about a file. Therefore, the inode number identifies the file within its filesystem.
+
+Observed output:
+
+147627 /etc/sudoers
+
+Observed inode number: "147627"
+
